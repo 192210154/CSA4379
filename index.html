@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Coastal Boutique Hotel</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="http://localhost/coastalhotel/index.html">Home</a>
+        <a href="http://localhost/coastalhotel/about.php">About Us</a>
+        <a href="http://localhost/coastalhotel/gallery.php">Gallery</a>
+        <a href="http://localhost/coastalhotel/contact.php">Contact</a>
+        <a href="http://localhost/coastalhotel/login.php">Login</a>
+        <a href="http://localhost/coastalhotel/register.php">Register</a>
+    </nav>
+    <header>
+        <div class="header-content">
+            <h1>Your Coastal Hideaway</h1>
+            <p>Steps from the shore, serenity awaits.</p>
+        </div>
+    </header>
+    <div class="wave"></div>
+    <section class="booking">
+        <h2>Book Your Stay</h2>
+        <form action="http://localhost/coastalhotel/book.php" method="POST">
+            <label>Check-In: <input type="date" name="check_in" required></label>
+            <label>Check-Out: <input type="date" name="check_out" required></label>
+            <button type="submit">Check Availability</button>
+        </form>
+    </section>
+    <div class="wave wave-bottom"></div>
+    <section class="rooms">
+        <h2>Our Rooms</h2>
+        <input type="text" id="room-search" placeholder="Search rooms (e.g., Seashell, Suite)...">
+        <div class="room-grid">
+            <div class="room">
+                <img src="images/seashell-single.jpg" alt="Seashell Single">
+                <h3>Seashell Single</h3>
+                <p>$80/night</p>
+            </div>
+            <div class="room">
+                <img src="images/ocean-breeze-double.jpg" alt="Ocean Breeze Double">
+                <h3>Ocean Breeze Double</h3>
+                <p>$120/night</p>
+            </div>
+            <div class="room">
+                <img src="images/captains-suite.jpg" alt="Captain’s Suite">
+                <h3>Captain’s Suite</h3>
+                <p>$180/night</p>
+            </div>
+            <div class="room">
+                <img src="images/lighthouse-loft.jpg" alt="Lighthouse Loft">
+                <h3>Lighthouse Loft</h3>
+                <p>$150/night</p>
+            </div>
+            <div class="room">
+                <img src="images/driftwood-deluxe.jpg" alt="Driftwood Deluxe">
+                <h3>Driftwood Deluxe</h3>
+                <p>$140/night</p>
+            </div>
+        </div>
+        <p class="deal">Weekend Getaway: Book Fri-Sun for 15% off!</p>
+    </section>
+    <footer>
+        <p>Coastal Boutique Hotel © 2025</p>
+        <p>Contact: info@coastalhotel.com | (123) 456-7890</p>
+        <p><a href="http://localhost/coastalhotel/login.php">Login</a> | <a href="http://localhost/coastalhotel/register.php">Register</a> | <a href="http://localhost/coastalhotel/privacy.php">Privacy Policy</a> | <a href="http://localhost/coastalhotel/terms.php">Terms of Service</a></p>
+    </footer>
+    <script>
+        document.getElementById('room-search').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const rooms = document.querySelectorAll('.room');
+            rooms.forEach(room => {
+                const roomName = room.querySelector('h3').textContent.toLowerCase();
+                room.style.display = roomName.includes(searchTerm) ? 'block' : 'none';
+            });
+        });
+    </script>
+</body>
+</html>
